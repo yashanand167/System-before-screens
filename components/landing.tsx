@@ -10,8 +10,8 @@ const SPRING_CONFIG = { stiffness: 300, damping: 30 };
 export const Landing = () => {
 
     return (
-        <div className="h-[340vh] p-4 sm:p-10 md:p-20">
-            <div className="max-w-5xl mx-auto bg-[#FEFEFD] border border-neutral-200 rounded-2xl h-full w-full overflow-hidden">
+        <div className="h-auto md:h-[340vh] p-4 sm:p-10 md:p-20 pb-28">
+            <div className="max-w-5xl mx-auto bg-[#FEFEFD] border border-neutral-200 rounded-2xl h-auto md:h-full w-full overflow-hidden">
                 <PagesContent />
             </div>
             <div className="fixed inset-0 h-full w-full pl-8 pointer-events-none">
