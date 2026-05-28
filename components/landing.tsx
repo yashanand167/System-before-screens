@@ -4,19 +4,79 @@ import { cn } from "@/lib/utils";
 import { motion, useMotionValue, MotionValue, useTransform, useSpring, useScroll } from "motion/react";
 import { StepForward } from 'lucide-react'
 import PagesContent from "./PagesContent";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const SPRING_CONFIG = { stiffness: 300, damping: 30 };
 
 export const Landing = () => {
+    const [isOpening, setIsOpening] = useState(false);
+    const router = useRouter();
+
+    const startOpening = () => {
+        setIsOpening(true);
+
+        setTimeout(() => {
+            router.push("/pages");
+        }, 2000);
+    }
 
     return (
-        <div className="h-auto md:h-[340vh] p-4 sm:p-10 md:p-20 pb-28">
-            <div className="max-w-5xl mx-auto bg-[#FEFEFD] border border-neutral-200 rounded-2xl h-auto md:h-full w-full overflow-hidden">
-                <PagesContent />
-            </div>
-            <div className="fixed inset-0 h-full w-full pl-8 pointer-events-none">
+        <div className="h-auto md:h-[340vh] p-4 sm:p-10 md:p-20 pb-28 relative [perspective:2000px]">
+            {/* The page behind the cover (revealed as the cover opens) */}
+            {isOpening && (
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.97 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                    className="absolute inset-4 sm:inset-10 md:inset-20 max-w-5xl mx-auto bg-[#FEFEFD] border border-neutral-200 rounded-2xl z-0 flex flex-col items-center justify-center shadow-inner"
+                >
+                    <div className="text-center p-8 max-w-md">
+                        <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-orange-500/80 mb-2">Chapter 01</h2>
+                        <h1 className="text-4xl font-instrument italic text-neutral-800 leading-tight">Thinking</h1>
+                        <p className="text-xs text-neutral-400 font-light mt-6 tracking-widest uppercase animate-pulse">Opening pages...</p>
+                    </div>
+                </motion.div>
+            )}
+
+            <motion.div 
+                animate={isOpening ? { 
+                    rotateY: -110, 
+                    scale: 0.95, 
+                    x: "-15%", 
+                    opacity: 0,
+                    z: -100
+                } : { 
+                    rotateY: 0, 
+                    scale: 1, 
+                    x: 0, 
+                    opacity: 1,
+                    z: 0
+                }}
+                transition={{ duration: 1.6, ease: [0.645, 0.045, 0.355, 1] }}
+                style={{ transformOrigin: "left center" }}
+                className="relative max-w-5xl mx-auto bg-[#FEFEFD] border border-neutral-200 rounded-2xl h-auto md:h-full w-full overflow-hidden pl-8 md:pl-12 z-10"
+            >
+                {/* Book spine binding (black) */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 md:w-12 bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border-r border-neutral-800/80 z-20 flex flex-col justify-between items-center py-12 select-none shadow-[inset_-1px_0_4px_rgba(0,0,0,0.5)]">
+                    <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-amber-500/25 to-transparent" />
+
+                    {/* Spine vertical text title */}
+                    <div className="[writing-mode:vertical-lr] rotate-180 text-[10px] sm:text-[11px] uppercase tracking-[0.25em] font-medium text-neutral-400/60 font-mono">
+                        Thinking Beyond Canvas
+                    </div>
+
+                    <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-amber-500/25 to-transparent" />
+                </div>
+
+                {/* Hinge crease shadow for 3D realism */}
+                <div className="absolute left-8 md:left-12 top-0 bottom-0 w-3 bg-gradient-to-r from-black/15 to-transparent pointer-events-none z-20" />
+
+                <PagesContent onStartOpening={startOpening} />
+            </motion.div>
+            {/* <div className="fixed inset-0 h-full w-full pl-8 pointer-events-none">
                 <Bars />
-            </div>
+            </div> */}
         </div>
     )
 }
