@@ -37,54 +37,56 @@ export default function PagesContent({ onStartOpening }: PagesContentProps) {
 
     return (
         <div>
-            <div className="flex justify-between items-center bg-[#FEFEFD] border-b border-neutral-100/60 px-6 py-4">
+            <div className="flex justify-between items-center bg-[#FEFEFD] border-b border-neutral-100/60 px-4 py-3 sm:px-6 sm:py-4">
                 <button
                     onClick={() => onStartOpening?.()}
-                    className="flex items-center gap-1.5 text-xs font-semibold text-orange-500 tracking-wider uppercase hover:text-orange-600 transition-colors duration-300 cursor-pointer group"
+                    className="flex items-center gap-1 text-[10px] sm:text-xs font-bold text-orange-500 tracking-wider uppercase hover:text-orange-600 transition-colors duration-300 cursor-pointer group"
                 >
                     <span>Start Reading</span>
-                    <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform duration-200" />
+                    <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform duration-200" />
                 </button>
-                <div className="flex gap-2 items-center">
-                    <p className="text-xs text-gray-500">Scroll to continue</p>
-                    <ArrowDownToLine className="text-gray-500" size={13} />
+                <div className="flex gap-1.5 items-center">
+                    <p className="text-[10px] sm:text-xs text-gray-500">Scroll to continue</p>
+                    <ArrowDownToLine className="text-gray-500" size={11} />
                 </div>
             </div>
-            <main className="flex flex-col p-5 sm:p-10 pt-0">
-                <div className="w-fit p-2 bg-orange-500/10 rounded-2xl">
-                    <h1 className="text-orange-500">Total 5 Chapters</h1>
+            <main className="flex flex-col p-5 sm:p-10 pt-0 mt-4">
+                <div className="w-fit px-2.5 py-0.5 bg-orange-500/10 rounded-full">
+                    <span className="text-[9px] sm:text-xs font-semibold text-orange-500 uppercase tracking-wider">
+                        Total 5 Chapters
+                    </span>
                 </div>
-                <div className="">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-instrument italic text-orange-500 leading-tight">THINKING BEYOND CANVAS</h1>
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between items-start gap-4 mt-6">
-                        <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-600">AI for Product Designers</p>
+                <div className="mt-3">
+                    <h1 className="text-2xl sm:text-5xl md:text-6xl font-instrument italic text-orange-500 leading-tight">THINKING BEYOND CANVAS</h1>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between items-start gap-4 mt-4">
+                        <p className="text-base sm:text-2xl md:text-3xl font-medium text-gray-600">AI for Product Designers</p>
                         <motion.a
                             href="https://www.yashanand.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ y: -2, scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-neutral-200/60 bg-white/90 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(249,115,22,0.08),0_0_12px_rgba(249,115,22,0.04)] hover:border-orange-200/80 transition-all duration-300 cursor-pointer group"
+                            className="flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200/60 bg-white/90 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(249,115,22,0.08),0_0_12px_rgba(249,115,22,0.04)] hover:border-orange-200/80 transition-all duration-300 cursor-pointer group"
                         >
                             <Image
                                 src="/profile.png"
                                 alt="Yash Anand"
-                                width={24}
-                                height={24}
+                                width={20}
+                                height={20}
                                 className="rounded-full object-cover ring-2 ring-neutral-100 group-hover:ring-orange-100 transition-all duration-300"
                             />
-                            <span className="text-xs font-medium text-neutral-500 tracking-tight select-none">
+                            <span className="text-[10px] sm:text-xs font-medium text-neutral-500 tracking-tight select-none">
                                 Crafted by <span className="text-neutral-800 font-semibold group-hover:text-orange-500 transition-colors duration-300">Yash Anand</span>
                             </span>
                         </motion.a>
                     </div>
 
 
-                    <div className="mt-10 text-lg text-gray-500 max-w-lg">
+                    <div className="mt-6 text-sm sm:text-lg text-gray-500 max-w-lg leading-relaxed">
                         <p>A practical handbook on designing products in the age of intelligence systems</p>
                     </div>
 
-                    <div className="mt-10 text-md text-gray-500 max-w-lg">
+                    <div className="mt-4 text-xs sm:text-md text-gray-400 max-w-lg leading-relaxed">
                         <p>This handbook explores how AI is transforming the product design process. The skills we need to build, and the mindsets that will shape the future</p>
                     </div>
                 </div>
@@ -171,39 +173,39 @@ export default function PagesContent({ onStartOpening }: PagesContentProps) {
                         </h1>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 w-full">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-6 mt-12 w-full">
                         {DESIGN_QUOTES.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="relative w-full aspect-square flex flex-col justify-between p-8 sm:p-10 rounded-[2rem] border border-neutral-200/60 bg-gradient-to-tr from-neutral-50 via-white to-orange-50/20 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(249,115,22,0.06)] hover:border-orange-200/50 transition-all duration-500 overflow-hidden cursor-pointer group"
+                                className="relative w-full aspect-square flex flex-col justify-between p-4 sm:p-8 md:p-10 rounded-2xl sm:rounded-[2rem] border border-neutral-200/60 bg-gradient-to-tr from-neutral-50 via-white to-orange-50/20 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(249,115,22,0.06)] hover:border-orange-200/50 transition-all duration-500 overflow-hidden cursor-pointer group"
                                 whileHover={{ y: -6 }}
                                 layout
                             >
                                 {/* Decorative Quote Icon Background */}
-                                <div className="absolute right-6 top-6 text-neutral-100/70 group-hover:text-orange-100/50 group-hover:scale-110 transition-all duration-500 select-none">
-                                    <Quote size={100} strokeWidth={0.5} />
+                                <div className="absolute right-4 top-4 sm:right-6 sm:top-6 text-neutral-100/70 group-hover:text-orange-100/50 group-hover:scale-110 transition-all duration-500 select-none">
+                                    <Quote className="w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24" strokeWidth={0.5} />
                                 </div>
 
                                 {/* Top row */}
                                 <div className="relative z-10">
-                                    <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:scale-105 transition-transform duration-300">
-                                        <Quote size={18} />
+                                    <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:scale-105 transition-transform duration-300">
+                                        <Quote className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px]" />
                                     </div>
                                 </div>
 
                                 {/* Middle - Quote Text */}
-                                <div className="relative z-10 flex-grow flex items-center my-6">
-                                    <p className="text-lg sm:text-xl font-instrument italic text-neutral-800 leading-relaxed">
+                                <div className="relative z-10 flex-grow flex items-center my-2 sm:my-6">
+                                    <p className="text-[10px] leading-snug sm:text-lg sm:leading-relaxed md:text-xl font-instrument italic text-neutral-800">
                                         “{item.quote}”
                                     </p>
                                 </div>
 
                                 {/* Bottom - Author */}
                                 <div className="relative z-10 flex flex-col">
-                                    <span className="text-sm font-semibold text-neutral-800 tracking-tight">
+                                    <span className="text-[10px] sm:text-sm font-semibold text-neutral-800 tracking-tight">
                                         {item.author}
                                     </span>
-                                    <span className="text-xs text-neutral-400 font-light mt-0.5">
+                                    <span className="text-[8px] sm:text-xs text-neutral-400 font-light mt-0.5">
                                         {item.role}
                                     </span>
                                 </div>
