@@ -3,16 +3,22 @@
 import { cn } from "@/lib/utils";
 import { StepForward } from "lucide-react";
 import { motion, MotionValue, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
-import React from "react";
+import React, { useState } from "react";
 
 const SPRING_CONFIG = { stiffness: 300, damping: 30 };
 
 export default function Page() {
+    const [page, setPage] = useState("page 1");
+    const { scrollYProgress } = useScroll();
+    
     return (
-        <div>
-            <Bars />
+        <main>
+            <div>
+                <Bars />
+            </div>
+
             <h1>Hello</h1>
-        </div>
+        </main>
     )
 }
 

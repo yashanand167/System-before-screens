@@ -59,26 +59,49 @@ export default function PagesContent({ onStartOpening }: PagesContentProps) {
                 <div className="mt-3">
                     <h1 className="text-2xl sm:text-5xl md:text-6xl font-instrument italic text-orange-500 leading-tight">THINKING BEYOND CANVAS</h1>
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between items-start gap-4 mt-4">
-                        <p className="text-base sm:text-2xl md:text-3xl font-medium text-gray-600">AI for Product Designers</p>
-                        <motion.a
-                            href="https://www.yashanand.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ y: -2, scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200/60 bg-white/90 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(249,115,22,0.08),0_0_12px_rgba(249,115,22,0.04)] hover:border-orange-200/80 transition-all duration-300 cursor-pointer group"
+                        <p className="text-base sm:text-2xl md:text-3xl font-medium text-gray-600">The AI Cheat Code for Product Designers</p>
+                        <motion.div
+                            whileHover={{ y: -2 }}
+                            className="flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200/60 bg-white/90 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(249,115,22,0.08),0_0_12px_rgba(249,115,22,0.04)] hover:border-orange-200/80 transition-all duration-300 select-none"
                         >
-                            <Image
-                                src="/profile.png"
-                                alt="Yash Anand"
-                                width={20}
-                                height={20}
-                                className="rounded-full object-cover ring-2 ring-neutral-100 group-hover:ring-orange-100 transition-all duration-300"
-                            />
-                            <span className="text-[10px] sm:text-xs font-medium text-neutral-500 tracking-tight select-none">
-                                Crafted by <span className="text-neutral-800 font-semibold group-hover:text-orange-500 transition-colors duration-300">Yash Anand</span>
+                            <span className="text-[10px] sm:text-xs font-medium text-neutral-500 tracking-tight">
+                                Crafted by
                             </span>
-                        </motion.a>
+                            <div className="flex items-center gap-1.5">
+                                <motion.a
+                                    href="https://www.yashanand.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    className="flex items-center cursor-pointer"
+                                >
+                                    <Image
+                                        src="/profile.png"
+                                        alt="Yash Anand"
+                                        width={20}
+                                        height={20}
+                                        className="rounded-full object-cover ring-2 ring-neutral-100 hover:ring-orange-100 transition-all duration-300"
+                                    />
+                                </motion.a>
+                                <motion.a
+                                    href="https://www.linkedin.com/in/luvkushsharma/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    className="flex items-center cursor-pointer"
+                                >
+                                    <Image
+                                        src="/Luvkush.jpg"
+                                        alt="Luvkush Sharma"
+                                        width={20}
+                                        height={20}
+                                        className="rounded-full object-cover ring-2 ring-neutral-100 hover:ring-orange-100 transition-all duration-300"
+                                    />
+                                </motion.a>
+                            </div>
+                        </motion.div>
                     </div>
 
 
