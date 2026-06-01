@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Chapter1() {
     return (
         <div className="flex flex-col">
-            
+
             {/* Page 1: Chapter Introduction, User Research, & Amazon Example */}
             <div className="h-auto md:h-[340vh] p-4 sm:p-10 md:p-20 pb-28 relative [perspective:2000px]">
                 <div className="relative max-w-5xl mx-auto bg-[#FEFEFD] border border-neutral-200 rounded-2xl h-auto md:h-full w-full overflow-hidden p-6 sm:p-10 md:p-12 z-10 shadow-sm">
@@ -41,7 +41,7 @@ export default function Chapter1() {
                     <div className="mt-12 border-t border-neutral-100 pt-8">
                         <h2 className="text-xl font-semibold text-neutral-800 tracking-tight">In this chapter</h2>
                         <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                            <motion.li 
+                            <motion.li
                                 whileHover={{ y: -2 }}
                                 className="bg-neutral-50/50 border border-neutral-200/50 p-5 rounded-xl hover:border-orange-200/50 hover:bg-orange-50/5 transition-all duration-300"
                             >
@@ -50,7 +50,7 @@ export default function Chapter1() {
                                     Why user research still matters in the AI era
                                 </span>
                             </motion.li>
-                            <motion.li 
+                            <motion.li
                                 whileHover={{ y: -2 }}
                                 className="bg-neutral-50/50 border border-neutral-200/50 p-5 rounded-xl hover:border-orange-200/50 hover:bg-orange-50/5 transition-all duration-300"
                             >
@@ -59,7 +59,7 @@ export default function Chapter1() {
                                     Core framework: Problem first, AI second
                                 </span>
                             </motion.li>
-                            <motion.li 
+                            <motion.li
                                 whileHover={{ y: -2 }}
                                 className="bg-neutral-50/50 border border-neutral-200/50 p-5 rounded-xl hover:border-orange-200/50 hover:bg-orange-50/5 transition-all duration-300"
                             >
@@ -202,13 +202,13 @@ export default function Chapter1() {
                             </ul>
                             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mt-12">
                                 <div className="w-full md:w-[350px] shrink-0">
-                                    <Image 
-                                        src="/Image4.png" 
-                                        alt="AI design" 
-                                        width={400} 
-                                        height={400} 
+                                    <Image
+                                        src="/Image4.png"
+                                        alt="AI design"
+                                        width={400}
+                                        height={400}
                                         unoptimized
-                                        className="w-full h-auto rounded-2xl" 
+                                        className="w-full h-auto rounded-2xl"
                                     />
                                 </div>
                                 <div className="text-left flex-1">
@@ -232,7 +232,7 @@ export default function Chapter1() {
                                     "User struggling to maintain their consistency"
                                 </div>
                                 <p className="text-lg text-neutral-600 leading-relaxed font-light mt-4">
-                                    The actual solution might be <strong className="text-neutral-900 font-semibold">reminders, habit loops, and guidance</strong> via the platform itself, rather than a data-heavy dashboard. 
+                                    The actual solution might be <strong className="text-neutral-900 font-semibold">reminders, habit loops, and guidance</strong> via the platform itself, rather than a data-heavy dashboard.
                                 </p>
                                 <p className="text-lg text-neutral-600 leading-relaxed font-light mt-4">
                                     Often, the <strong className="text-orange-500 font-semibold">dashboard was never the problem</strong>—it was simply the default aesthetic solution we fell back on.
@@ -276,6 +276,77 @@ export default function Chapter1() {
                                         </p>
                                         <p className="text-xl sm:text-2xl md:text-3xl font-instrument italic leading-tight text-white/95 mt-2">
                                             Great designers discover the problem before writing the prompt.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div className="flex flex-row items-center justify-center gap-4 mt-16 px-4">
+                                    <div className="w-12 sm:w-24 md:w-40 h-px bg-gradient-to-r from-transparent to-neutral-300" />
+                                    <h2 className="text-sm sm:text-base md:text-lg font-semibold text-neutral-600 text-center leading-snug">
+                                        Designing for human goals, not just aesthetics
+                                    </h2>
+                                    <div className="w-12 sm:w-24 md:w-40 h-px bg-gradient-to-r from-neutral-300 to-transparent" />
+                                </div>
+
+                                <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 mt-12 px-2 sm:px-6">
+                                    <div className="flex-1 text-left">
+                                        <h3 className="text-xl sm:text-2xl font-semibold text-neutral-900 tracking-tight">
+                                            Let's consider the example of Spotify
+                                        </h3>
+                                        <p className="text-lg text-neutral-600 leading-relaxed font-light mt-4">
+                                            Spotify could effortlessly focus on having one of the most premium-looking designs compared to competitors like <strong>Apple Music</strong> or <strong>YouTube Music</strong>.
+                                        </p>
+                                        <p className="text-lg text-neutral-600 leading-relaxed font-light mt-4">
+                                            Instead, it focused on a core human goal:
+                                        </p>
+                                        <div className="my-6 pl-4 border-l-2 border-emerald-500 italic text-neutral-800 text-lg sm:text-xl font-instrument">
+                                            “I want to find and enjoy music I love.”
+                                        </div>
+                                        <p className="text-lg text-neutral-600 leading-relaxed font-light mt-4">
+                                            That goal led to features such as:
+                                        </p>
+                                        <ul className="space-y-3 mt-5 text-lg text-neutral-600 font-light leading-relaxed">
+                                            {[
+                                                "Discover Weekly",
+                                                "Daily Mixes",
+                                                "Personalized recommendations",
+                                                "Continue listening",
+                                                "Smart playlists"
+                                            ].map((item, index) => (
+                                                <li key={index} className="flex items-start gap-3">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 shrink-0" />
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <p className="text-lg text-neutral-600 leading-relaxed font-light mt-6">
+                                            The visual design supports these experiences, but the real value comes from helping users achieve their goal with less effort.
+                                        </p>
+                                    </div>
+
+                                    <div className="w-full md:w-[350px] shrink-0">
+                                        <Image
+                                            src="/Image5.png"
+                                            alt="Spotify example"
+                                            width={350}
+                                            height={350}
+                                            unoptimized
+                                            className="w-full h-auto rounded-2xl shadow-md border border-neutral-100"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="mt-12 bg-orange-500 rounded-2xl p-6 sm:p-8 md:p-10 text-white relative overflow-hidden select-none">
+                                    <div className="absolute right-4 -top-6 text-white/10 text-[12rem] font-instrument italic pointer-events-none select-none">
+                                        “
+                                    </div>
+                                    <div className="relative z-10 flex flex-col gap-4 text-left max-w-3xl">
+                                        <p className="text-lg sm:text-xl font-light leading-relaxed">
+                                            Great products are not built from prompts.
+                                        </p>
+                                        <p className="text-xl sm:text-2xl md:text-3xl font-instrument italic leading-tight text-white/95 mt-2">
+                                            They are built from understanding.
                                         </p>
                                     </div>
                                 </div>
