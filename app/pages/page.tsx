@@ -1,5 +1,6 @@
 "use client";
 
+import Chapter1 from "@/components/contents/Chapter1";
 import { cn } from "@/lib/utils";
 import { StepForward } from "lucide-react";
 import { motion, MotionValue, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
@@ -8,16 +9,12 @@ import React, { useState } from "react";
 const SPRING_CONFIG = { stiffness: 300, damping: 30 };
 
 export default function Page() {
-    const [page, setPage] = useState("page 1");
+    const [chapters, setChapters] = useState("chapter 1");
     const { scrollYProgress } = useScroll();
-    
+
     return (
         <main>
-            <div>
-                <Bars />
-            </div>
-
-            <h1>Hello</h1>
+            <Chapter1 />
         </main>
     )
 }
