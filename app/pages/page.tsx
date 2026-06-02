@@ -1,6 +1,7 @@
 "use client";
 
 import Chapter1 from "@/components/contents/Chapter1";
+import Chapter2 from "@/components/contents/Chapter2";
 import { cn } from "@/lib/utils";
 import { StepForward } from "lucide-react";
 import { motion, MotionValue, useMotionValue, useScroll, useSpring, useTransform } from "motion/react";
@@ -15,6 +16,7 @@ export default function Page() {
     return (
         <main>
             <Chapter1 />
+            <Chapter2 />
         </main>
     )
 }

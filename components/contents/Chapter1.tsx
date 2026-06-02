@@ -337,7 +337,7 @@ export default function Chapter1() {
                                     </div>
                                 </div>
 
-                                <div className="mt-12 bg-orange-500 rounded-2xl p-6 sm:p-8 md:p-10 text-white relative overflow-hidden select-none">
+                                <div className="mt-15 bg-orange-500 rounded-2xl p-6 sm:p-8 md:p-10 text-white relative overflow-hidden select-none">
                                     <div className="absolute right-4 -top-6 text-white/10 text-[12rem] font-instrument italic pointer-events-none select-none">
                                         “
                                     </div>
