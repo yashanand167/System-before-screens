@@ -1,5 +1,7 @@
 import { motion } from 'motion/react'
 import Image from 'next/image'
+import QuoteBlock from '@/components/QuoteBlock'
+
 
 export default function Chapter1() {
     return (
@@ -263,22 +265,13 @@ export default function Chapter1() {
                                     ))}
                                 </ol>
 
-                                <div className="mt-12 bg-orange-500 rounded-2xl p-6 sm:p-8 md:p-10 text-white relative overflow-hidden select-none">
-                                    <div className="absolute right-4 -top-6 text-white/10 text-[12rem] font-instrument italic pointer-events-none select-none">
-                                        “
-                                    </div>
-                                    <div className="relative z-10 flex flex-col gap-4 text-left max-w-3xl">
-                                        <p className="text-lg sm:text-xl font-light leading-relaxed">
-                                            Bad designers prompt AI for <strong className="text-white font-bold underline decoration-white/20 underline-offset-4">screens</strong>.
-                                        </p>
-                                        <p className="text-lg sm:text-xl font-light leading-relaxed">
-                                            Good designers prompt AI with <strong className="text-white font-bold underline decoration-white/20 underline-offset-4">insights</strong>.
-                                        </p>
-                                        <p className="text-xl sm:text-2xl md:text-3xl font-instrument italic leading-tight text-white/95 mt-2">
-                                            Great designers discover the problem before writing the prompt.
-                                        </p>
-                                    </div>
-                                </div>
+                                <QuoteBlock
+                                    paragraphs={[
+                                        <>Bad designers prompt AI for <strong className="text-orange-600 font-semibold underline decoration-orange-200 underline-offset-4">screens</strong>.</>,
+                                        <>Good designers prompt AI with <strong className="text-orange-600 font-semibold underline decoration-orange-200 underline-offset-4">insights</strong>.</>
+                                    ]}
+                                    highlightText="Great designers discover the problem before writing the prompt."
+                                />
 
 
                                 <div className="flex flex-row items-center justify-center gap-4 mt-16 px-4">
@@ -337,19 +330,12 @@ export default function Chapter1() {
                                     </div>
                                 </div>
 
-                                <div className="mt-15 bg-orange-500 rounded-2xl p-6 sm:p-8 md:p-10 text-white relative overflow-hidden select-none">
-                                    <div className="absolute right-4 -top-6 text-white/10 text-[12rem] font-instrument italic pointer-events-none select-none">
-                                        “
-                                    </div>
-                                    <div className="relative z-10 flex flex-col gap-4 text-left max-w-3xl">
-                                        <p className="text-lg sm:text-xl font-light leading-relaxed">
-                                            Great products are not built from prompts.
-                                        </p>
-                                        <p className="text-xl sm:text-2xl md:text-3xl font-instrument italic leading-tight text-white/95 mt-2">
-                                            They are built from understanding.
-                                        </p>
-                                    </div>
-                                </div>
+                                <QuoteBlock
+                                    paragraphs={[
+                                        "Great products are not built from prompts."
+                                    ]}
+                                    highlightText="They are built from understanding."
+                                />
                             </div>
                         </div>
                     </section>
