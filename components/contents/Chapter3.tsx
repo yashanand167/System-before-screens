@@ -1,4 +1,4 @@
-export default function Page3() {
+export default function Chapter3() {
     return (
         <div>
             

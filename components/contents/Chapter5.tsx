@@ -1,4 +1,4 @@
-export default function Page5() {
+export default function Chapter5() {
     return (
         <div>
             <h1>Page 5</h1>
